@@ -1,5 +1,9 @@
 @import url('/styles/ratingWidget.css');
 
+.light{
+  background-color: light;
+}
+
 .align{
   text-align: center
 }

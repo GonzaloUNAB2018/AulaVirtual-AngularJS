@@ -1,18 +1,11 @@
 <div ng-include="crearCatedra.layout.header"></div>
 
-<div class="breadcrumb-header">
-	<ol class="breadcrumb">
-		<li><a href="/"><i class="fas fa-home"></i></a></li>
-	  	<li><a href="#">Perfil: {{user.role}}</a></li>
-	  	<li class="active">{{user.nombre | capitalize}} {{user.lastName | capitalize}}</li>
-	</ol>
-	<div class="breadcrumb-title container-fluid">
-		Bienvenid<span ng-show="user.gender">a</span><span ng-show="!user.gender">o</span>
-		{{user.nombre | capitalizeEach}} {{user.lastName | capitalizeEach}}
-	</div>
-	<div class="breadcrumb-body container-fluid">
-		{{user.email | lowercase}}
-	</div>
+<div class="container">
+
+<div>
+    <div>
+    <h2>Usted está registrad@ como:</h2>
+    <h3> {{user.nombre | capitalize}} {{user.lastName | capitalize}} </h3>
 </div>
 
 <div class="container container-top container-bottom">
@@ -111,6 +104,7 @@
             </div>
         </div>
     </div>	
+</div>
 </div>
 
 <div class="footer-bottom" ng-include="crearCatedra.layout.footer"></div>
