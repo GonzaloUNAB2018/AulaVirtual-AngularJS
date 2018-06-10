@@ -1,0 +1,88 @@
+<div ng-include="main.layout.header"></div>
+
+<!--div class="container container-top container-bottom"-->
+	<div class="row">
+		<div class="col">
+		<div class="container">
+		<!--div class="col-md-12 panel-parent"-->
+			<!--div class="panel panel-default"-->
+
+				<!--div class="panel-body container-top"-->
+
+					<div ng-if="user.error !== undefined" class="alert alert-danger" role="alert">
+						<!--strong>Error!</strong><div>{{user.error}}</div-->
+						<strong class="align">Error!</strong><div>Datos no fueron ingresados correctamente</div>
+					</div>
+
+					<!--div ng-if="user.success !== undefined" class="alert alert-success" role="alert">
+						Bienvenido: <strong>{{user.person | capitalize}}</strong>
+					</div-->
+
+					<form class="form-horizontal" name="loginForm" id="loginForm" ng-submit="submitForm(loginForm.$invalid)" method="POST" data-toggle="validator" role="form">
+
+						<div class="form-group" id="usernameGroup">
+							<div class="col-md-12">
+								<input id="username" 
+									   type="text" 
+									   class="form-control input-login-control" 
+									   name="username" 
+									   value=""
+									   placeholder="Usuario" 
+									   required 
+									   data-div-parent="#usernameGroup"
+									   ng-model="user.username">
+								<span class="help-block with-errors"></span>
+							</div>
+						</div>
+						
+						<div class="form-group" id="passwordGroup">
+							<div class="col-md-12">
+								<input id="password" 
+									   type="password" 
+									   class="form-control input-login-control" 
+									   name="password"
+									   placeholder="Cotraseña"  
+									   required
+									   data-div-parent="#passwordGroup"
+									   ng-model="user.password">
+								<span class="help-block with-errors"></span>
+							</div>
+						</div>
+						
+						<div class="col">
+						<!--div class="col-md-12 text-right"-->
+							<div class="form-group">
+								<!--button type="submit"
+										class="btn btn-primary"
+										ng-click="userLogin()"-->
+								<button type="button submit" 
+									class="btn btn-primary btn-lg btn-block" 
+										ng-click="userLogin()">
+									Ingresar
+								</button>
+								<button type="button submit" 
+									class="btn btn-secondary btn-success btn-lg btn-block"
+										ng-click="userRegister()">
+									Registrarse
+								</button>
+								<button type="button" 
+									class="btn btn-danger btn-success btn-lg btn-block"
+										ng-click="userRecover()">
+									Recuperar Contraseña
+								</button>
+							</div>
+						</div>
+						<!--div class="form-group">
+							<div class="col-md-12 text-right">
+								<a href ng-click="userRecover()">Olvid&oacute; su Contrase&ntilde;a?</a>
+							</div>
+						</div-->
+					</form>
+					
+				<!--/div-->
+			</div>
+		</div>
+	<!--/div-->
+</div>
+
+<div class="footer-bottom" ng-include="main.layout.footer"></div>
